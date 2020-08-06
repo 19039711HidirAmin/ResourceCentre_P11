@@ -90,7 +90,7 @@ public class ResourceCentre {
 				}
 
 			} else if (option == OPTION_ENDPROGRAM) {
-				System.out.println("Bye!");
+				System.out.println("Bye!!");
 			} else {
 				System.out.println("Invalid option");
 			}
@@ -175,7 +175,7 @@ public class ResourceCentre {
 		String description = Helper.readString("Enter description > ");
 		int zoom = Helper.readInt("Enter optical zoom > ");
 
-		Camcorder cc= new Camcorder(tag, description, zoom);
+		Camcorder cc= new Camcorder(tag, description, zoom); 
 		return cc;
 		
 	}

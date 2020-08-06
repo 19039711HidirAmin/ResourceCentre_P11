@@ -205,6 +205,12 @@ public class ResourceCentre {
 		
 		boolean isLoaned = false;
 
+		isLoaned = loanCamMethod(camcorderList, tag, dueDate, isLoaned);
+		return isLoaned;
+	}
+
+	private static boolean loanCamMethod(ArrayList<Camcorder> camcorderList, String tag, String dueDate,
+			boolean isLoaned) {
 		for (int i = 0; i < camcorderList.size(); i++) {
 			
 			Camcorder selectedCamcorder = camcorderList.get(i);
@@ -241,6 +247,12 @@ public class ResourceCentre {
 		// write your code here
 		boolean isLoaned = false;
 
+		isLoaned = loanChromeMethod(chromebookList, tag, dueDate, isLoaned);
+		return isLoaned;
+	}
+
+	private static boolean loanChromeMethod(ArrayList<Chromebook> chromebookList, String tag, String dueDate,
+			boolean isLoaned) {
 		for (int i = 0; i < chromebookList.size(); i++) {
 			
 			Chromebook selectedChromebook = chromebookList.get(i);
@@ -278,6 +290,12 @@ public class ResourceCentre {
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
 		boolean isReturned = false;
 
+		isReturned = returnCamMethod(camcorderList, tag, isReturned);
+		return isReturned;
+		
+	}
+
+	private static boolean returnCamMethod(ArrayList<Camcorder> camcorderList, String tag, boolean isReturned) {
 		for (int i = 0; i < camcorderList.size(); i++) {
 			Camcorder selectedCamcorder = camcorderList.get(i);
 			if (tag.equalsIgnoreCase(selectedCamcorder.getAssetTag())
@@ -289,7 +307,6 @@ public class ResourceCentre {
 			}
 		}
 		return isReturned;
-		
 	}
 
 	public static void returnCamcorder(ArrayList<Camcorder> camcorderList) {
@@ -307,6 +324,12 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag) {
 		boolean isReturned = false;
 
+		isReturned = returnChromeMethod(chromebookList, tag, isReturned);
+		return isReturned;
+		
+	}
+
+	private static boolean returnChromeMethod(ArrayList<Chromebook> chromebookList, String tag, boolean isReturned) {
 		for (int i = 0; i < chromebookList.size(); i++) {
 			Chromebook selectedChromebook = chromebookList.get(i);
 			if (tag.equalsIgnoreCase(selectedChromebook.getAssetTag())
@@ -318,7 +341,6 @@ public class ResourceCentre {
 			}
 		}
 		return isReturned;
-		
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here

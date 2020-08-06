@@ -207,13 +207,15 @@ public class ResourceCentre {
 
 		for (int i = 0; i < camcorderList.size(); i++) {
 			
-			String assetTag = camcorderList.get(i).getAssetTag();
+			Camcorder selectedCamcorder = camcorderList.get(i);
+			
+			String assetTag = selectedCamcorder.getAssetTag();
 			
 			if (tag.equalsIgnoreCase(assetTag)				
-					&& camcorderList.get(i).getIsAvailable() == true) {
+					&& selectedCamcorder.getIsAvailable() == true) {
 				
-				camcorderList.get(i).setIsAvailable(false);
-				camcorderList.get(i).setDueDate(dueDate);
+				selectedCamcorder.setIsAvailable(false);
+				selectedCamcorder.setDueDate(dueDate);
 				
 				isLoaned = true;
 				
@@ -240,14 +242,17 @@ public class ResourceCentre {
 		boolean isLoaned = false;
 
 		for (int i = 0; i < chromebookList.size(); i++) {
-			String assetTag = chromebookList.get(i).getAssetTag();
+			
+			Chromebook selectedChromebook = chromebookList.get(i);
+			
+			String assetTag = selectedChromebook.getAssetTag();
 			
 			if (tag.equalsIgnoreCase(assetTag)
 					
-					&& chromebookList.get(i).getIsAvailable() == true) {
+					&& selectedChromebook.getIsAvailable() == true) {
 				
-				chromebookList.get(i).setIsAvailable(false);
-				chromebookList.get(i).setDueDate(dueDate);
+				selectedChromebook.setIsAvailable(false);
+				selectedChromebook.setDueDate(dueDate);
 				
 				isLoaned = true;
 				
@@ -274,10 +279,11 @@ public class ResourceCentre {
 		boolean isReturned = false;
 
 		for (int i = 0; i < camcorderList.size(); i++) {
-			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())
-					&& camcorderList.get(i).getIsAvailable() == false) {
-				camcorderList.get(i).setIsAvailable(true);
-				camcorderList.get(i).setDueDate("");
+			Camcorder selectedCamcorder = camcorderList.get(i);
+			if (tag.equalsIgnoreCase(selectedCamcorder.getAssetTag())
+					&& selectedCamcorder.getIsAvailable() == false) {
+				selectedCamcorder.setIsAvailable(true);
+				selectedCamcorder.setDueDate("");
 				isReturned = true;
 				
 			}
@@ -302,10 +308,11 @@ public class ResourceCentre {
 		boolean isReturned = false;
 
 		for (int i = 0; i < chromebookList.size(); i++) {
-			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
-					&& chromebookList.get(i).getIsAvailable() == false) {
-				chromebookList.get(i).setIsAvailable(true);
-				chromebookList.get(i).setDueDate("");
+			Chromebook selectedChromebook = chromebookList.get(i);
+			if (tag.equalsIgnoreCase(selectedChromebook.getAssetTag())
+					&& selectedChromebook.getIsAvailable() == false) {
+				selectedChromebook.setIsAvailable(true);
+				selectedChromebook.setDueDate("");
 				isReturned = true;
 				
 			}

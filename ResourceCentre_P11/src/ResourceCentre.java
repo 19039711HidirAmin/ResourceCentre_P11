@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 public class ResourceCentre {
 
+	private static final int OPTION_ENDPROGRAM = 5;
+	private static final int OPTION_RETURNITEMS = 4;
+	private static final int OPTION_LOANITEMS = 3;
 	private static final int OPTION_ADDITEM = 2;
 	private static final int OPTION_VIEWALLITEM = 1;
 	public static void main(String[] args) {
@@ -49,7 +52,7 @@ public class ResourceCentre {
 					System.out.println("Invalid type");
 				}
 
-			} else if (option == 3) {
+			} else if (option == OPTION_LOANITEMS) {
 				// Loan item
 				ResourceCentre.setHeader("LOAN");			
 				ResourceCentre.setHeader("ITEM TYPES");
@@ -68,7 +71,7 @@ public class ResourceCentre {
 					System.out.println("Invalid type");
 				}
 
-			} else if (option == 4) {
+			} else if (option == OPTION_RETURNITEMS) {
 				// Return item
 				ResourceCentre.setHeader("RETURN");				
 				ResourceCentre.setHeader("ITEM TYPES");
@@ -86,7 +89,7 @@ public class ResourceCentre {
 					System.out.println("Invalid type");
 				}
 
-			} else if (option == 5) {
+			} else if (option == OPTION_ENDPROGRAM) {
 				System.out.println("Bye!");
 			} else {
 				System.out.println("Invalid option");
